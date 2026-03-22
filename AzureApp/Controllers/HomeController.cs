@@ -20,6 +20,7 @@ namespace AzureApp.Controllers
 
         public IActionResult Privacy()
         {
+            get();
             return View();
         }
 
@@ -27,6 +28,10 @@ namespace AzureApp.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public void get()
+        {
+            throw new Exception("This is an exception");
         }
     }
 }
